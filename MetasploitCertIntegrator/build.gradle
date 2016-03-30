@@ -1,0 +1,9 @@
+apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'org.jdesktop:application:1.0.3'
+}
