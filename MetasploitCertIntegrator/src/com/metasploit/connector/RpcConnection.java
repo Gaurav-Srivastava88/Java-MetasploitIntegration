@@ -35,7 +35,7 @@ public abstract class RpcConnection {
 	protected String rpcToken;
 	protected Map callCache = new HashMap();
 	public static String defaultUser = "msf",defaultPass = null, defaultHost = "127.0.0.1";
-	public static int defaultPort = 55553;
+	public static int defaultPort = 55552;
 	public static boolean defaultSsl = false;
 	public static boolean disableDb = false;
 	protected Socket connection;
