@@ -66,19 +66,6 @@ public abstract class RpcConnection {
 		return conn;
 	}
 
-	/**
-	 * Gets the unencoded data returned from a something.read call
-	 * @param ret The return from the read call
-	 * @return the 
-	 */
-	public static byte[] getData(Map received){
-		if(received.containsKey("encoding") && received.get("encoding").equals("base64"))
-		//	return Base64.decode(received.get("data").toString());
-			return received.get("data").toString().getBytes();
-		else
-			return received.get("data").toString().getBytes();
-	}
-
 	/** Setup sets up a connection and authenticates. */
 	public void setup(String username, char[] password, String host, int port, boolean ssl) throws MsfException {
 		boolean haveRpcd=false;
@@ -109,15 +96,6 @@ public abstract class RpcConnection {
 		}
 		if(!haveRpcd)
 			throw new MsfException("Error connecting. "+message);
-		/*Map root = MsfguiApp.getPropertiesNode();
-		root.put("username", username);
-		root.put("password", this.password);
-		root.put("host", host);
-		root.put("port", port);
-		root.put("ssl", ssl);
-		root.put("disableDb", disableDb);
-		MsfguiApp.savePreferences();
-		*/
 	}
 
 	/**
@@ -183,6 +161,7 @@ public abstract class RpcConnection {
 				+ "\nport: " + Integer.toString(port)
 				+ "\nssl: " + ssl;
 	}
+	
 	/** Destructor cleans up. */
 	protected void finalize() throws Throwable{
 		super.finalize();
