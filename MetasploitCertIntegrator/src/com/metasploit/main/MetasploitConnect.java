@@ -20,7 +20,6 @@ public class MetasploitConnect {
 		Object[] params4 = {"2"};
 		
 		System.out.println(conn.execute("core.module_stats", params));
-		
 		System.out.println(conn.execute("core.version", params));
 		//System.out.println(conn.execute("console.create", params));		
 		System.out.println(conn.execute("module.auxiliary", params));
@@ -29,6 +28,5 @@ public class MetasploitConnect {
 		System.out.println(conn.execute("console.write", params3));	
 		HashMap<String, String> jsonValue = (HashMap<String, String>) conn.execute("console.read", params4);
 		System.out.println(jsonValue.get("data"));
-		
 	}
 }
